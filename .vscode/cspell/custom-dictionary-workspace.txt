@@ -1,10 +1,12 @@
 __pycache__
 delitem
 depbot
+dotenv
 González
 micromock
 micropatcher
 MICROPY
+MICROPYPATH
 micropytest
 micropython
 mpremote
