@@ -5,6 +5,7 @@ González
 micromock
 micropatcher
 MICROPY
+MICROPYPATH
 micropytest
 micropython
 mpremote

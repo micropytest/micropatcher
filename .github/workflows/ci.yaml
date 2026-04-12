@@ -40,14 +40,6 @@ jobs:
       - name: Install dependencies (for Poetry)
         run: poetry install --no-interaction --no-root
 
-      - name: Static code analysis (Pyright)
-        run: poetry run pyright
-
-      - name: Static code analysis (Ruff)
-        run: |
-          poetry run ruff check
-          poetry run ruff format --check
-      
       - name: Set up MicroPython
         run: |
           BIN_DIR=${{github.workspace}}/.local/bin
@@ -77,9 +69,21 @@ jobs:
           # check
           $MICROPY_BIN -c "import sys; print(sys.version)"
       
+      - name: Set MICROPYPATH in .env
+        run: |
+          poetry run scripts/micropypath
+      
       - name: Setup MicroPython dependencies
         run: |
           poetry run scripts/install
+      
+      - name: Static code analysis (Pyright)
+        run: poetry run pyright
+
+      - name: Static code analysis (Ruff)
+        run: |
+          poetry run ruff check
+          poetry run ruff format --check
       
       - name: Run unit tests
         run: |
