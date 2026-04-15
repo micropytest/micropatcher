@@ -1,6 +1,6 @@
 # *micro:Patcher*
 
-A lib for patching things on **MicroPython**.
+A lightweight lib for patching things on **micro:Pytest** and **MicroPython**.
 
 
 ## Install
