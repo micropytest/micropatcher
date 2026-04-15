@@ -10,18 +10,5 @@
       "micropatcher/_patcher.py"
     ]
   ],
-  "deps": [
-    [
-      "unittest",
-      "latest"
-    ],
-    [
-      "unittest-discover",
-      "latest"
-    ],
-    [
-      "github:micropytest/should",
-      "latest"
-    ]
-  ]
+  "deps": []
 }
