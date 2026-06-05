@@ -2,7 +2,11 @@
   "v": "2026.6.0",
   "name": "micropatcher",
   "desc": "A lightweight lib for patching things on micro:Pytest and MicroPython.",
-  "keywords": ["mocking", "patching", "testing"],
+  "keywords": [
+    "mocking",
+    "patching",
+    "testing"
+  ],
   "urls": {
     "homepage": "https://micropytest.com",
     "git": "https://github.com/micropytest/micropatcher",
@@ -10,11 +14,16 @@
   },
   "src": {
     "dir": "micropatcher",
-    "include": ["__init__.py", "_patcher.py"]
+    "include": [
+      "__init__.py",
+      "_manifest.py",
+      "_patcher.py"
+    ]
   },
   "deps": {
     "dir": "deps/lib",
-    "prod": [],
+    "prod": [
+    ],
     "dev": [
       "lib://unittest",
       "lib://unittest-discover",
@@ -24,6 +33,35 @@
   "mpmi": {
     "indexes": {
       "micropytest": "github://micropytest"
+    }
+  },
+  "scripts": {
+    "build": {
+      "desc": "Prepares the package for its publish",
+      "env": {
+        ".env": true
+      },
+      "params": {
+        "segment": {
+          "desc": "Version segment to increment: major, minor, patch.",
+          "type": "str",
+          "value": ""
+        }
+      },
+      "run": [
+        "[ -n \"{segment}\" ] && micropython -m mpm inc-v {segment} || exit 0",
+        "micropython -m mpm _manifest",
+        "micropython -m mpm sync",
+        "micropython -m mpm mpy-cross --from-zero",
+        "micropython -m mpm mpy"
+      ]
+    },
+    "tests": {
+      "desc": "Runs the tests.",
+      "env": {
+        ".env": true
+      },
+      "run": "scripts/tests"
     }
   }
 }
