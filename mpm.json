@@ -1,5 +1,5 @@
 {
-  "v": "0.1.0",
+  "v": "2026.6.0",
   "name": "micropatcher",
   "desc": "A lightweight lib for patching things on micro:Pytest and MicroPython.",
   "keywords": ["mocking", "patching", "testing"],
@@ -8,19 +8,22 @@
     "git": "https://github.com/micropytest/micropatcher",
     "issues": "https://github.com/micropytest/micropatcher/issues"
   },
-
   "src": {
     "dir": "micropatcher",
     "include": ["__init__.py", "_patcher.py"]
   },
-
   "deps": {
-    "dir": "lib",
-    "prod": {},
-    "dev": {
-      "should": "github://micropytest/should",
-      "unittest": "lib://unittest",
-      "unittest-discover": "lib://unittest-discover"
+    "dir": "deps/lib",
+    "prod": [],
+    "dev": [
+      "lib://unittest",
+      "lib://unittest-discover",
+      "mpmi@micropytest://should"
+    ]
+  },
+  "mpmi": {
+    "indexes": {
+      "micropytest": "github://micropytest"
     }
   }
 }

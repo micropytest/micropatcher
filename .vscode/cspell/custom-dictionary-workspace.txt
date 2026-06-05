@@ -9,6 +9,7 @@ MICROPY
 MICROPYPATH
 micropytest
 micropython
+mpmi
 mpremote
 pipx
 pyproject

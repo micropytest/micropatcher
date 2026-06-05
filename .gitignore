@@ -1,9 +1,9 @@
 # dev
 .coverage/
 .ruff_cache/
-build/
-dist/
-lib/
+/build/
+/dist/
+/deps/
 
 # cache
 __pycache__/
