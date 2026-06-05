@@ -1,14 +1,10 @@
 {
-  "version": "0.1.0",
+  "version": "2026.6.0",
   "urls": [
-    [
-      "micropatcher/__init__.py",
-      "micropatcher/__init__.py"
-    ],
-    [
-      "micropatcher/_patcher.py",
-      "micropatcher/_patcher.py"
-    ]
+    ["micropatcher/__init__.py", "micropatcher/__init__.py"],
+    ["micropatcher/_manifest.py", "micropatcher/_manifest.py"],
+    ["micropatcher/_patcher.py", "micropatcher/_patcher.py"]
   ],
-  "deps": []
+  "deps": [
+  ]
 }

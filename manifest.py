@@ -1,2 +1,2 @@
-metadata(version="0.1.0")
 package("micropatcher")
+metadata(version="2026.6.0")
